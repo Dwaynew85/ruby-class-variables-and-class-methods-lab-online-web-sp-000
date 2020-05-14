@@ -31,6 +31,7 @@ class Song
     self.genres.each do |genre, song|
       genre_count[genre] = self.genres.count
     end
+    genre_count
   end
 
   def self.artist_count
