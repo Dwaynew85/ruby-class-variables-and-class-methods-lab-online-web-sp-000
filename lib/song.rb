@@ -28,16 +28,24 @@ class Song
 
   def self.genre_count
     genre_count = {}
-    self.genres.collect do |genre, song|
-      genre_count[genre] = self.genres.count
+    @@genres.each do |genre|
+      if genre_count[genre]
+        genre_count[genre] += 1 
+      else
+        genre_count[genre] = 1
+      end
     end
     genre_count
   end
 
   def self.artist_count
     artist_count = {}
-    self.artists.collect do |artist, song|
-      artist_count[artist] = self.artists.count
+    @@artists.each do |artist|
+      if artist_count[artist]
+        artist_count[artist] += 1 
+      else
+        artist_count[artist] = 1
+      end
     end
     artist_count
   end
