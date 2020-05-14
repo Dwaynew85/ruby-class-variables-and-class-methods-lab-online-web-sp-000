@@ -28,7 +28,7 @@ class Song
 
   def self.genre_count
     genre_count = {}
-    self.genres.each do |genre, song|
+    self.genres.collect do |genre, song|
       genre_count[genre] = self.genres.count
     end
     genre_count
@@ -36,7 +36,7 @@ class Song
 
   def self.artist_count
     artist_count = {}
-    self.artists.each do |artist, song|
+    self.artists.collect do |artist, song|
       artist_count[artist] = self.artists.count
     end
     artist_count
