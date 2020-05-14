@@ -27,7 +27,10 @@ class Song
   end
 
   def self.genre_count
-    self.genres.count
+    genre_count = {}
+    self.genres.collect do |genre, song|
+      genre_count[genre] = self.genres.count 
+    end      
   end
 
   def self.artist_count
